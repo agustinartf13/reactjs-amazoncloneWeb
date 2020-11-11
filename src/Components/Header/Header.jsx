@@ -31,7 +31,7 @@ function Header() {
         {/* link login */}
         <div className="header__option">
           <span className="header__optionLineOne">Hello Agustina</span>
-          <span className="header__optionLineTow">Sign Out | Sign In</span>
+          <span className="header__optionLineTow">Sign In</span>
         </div>
         {/* endlink login */}
 
@@ -51,7 +51,6 @@ function Header() {
         <div className="header__optionBasket">
           <ShoppingBasketIcon />
           <span className="header__optionLineTwo header__basketCount">
-         
           </span>
         </div>
         {/* endlink checkout */}
