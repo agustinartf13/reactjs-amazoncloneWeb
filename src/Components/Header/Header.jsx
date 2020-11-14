@@ -2,10 +2,11 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import  { useStateValue } from '../../utils/StateProvider'
 import { Link } from "react-router-dom";
 
 function Header() {
-  //   const [{ basket, user }, dispatch] = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
   //   const handleAuthenticaton = () => {
   //     if (user) {
@@ -16,10 +17,12 @@ function Header() {
   return (
     <div className="header">
       {/* link logo */}
-      <img
-        className="header__logo"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-      />
+      <Link to='/'>
+        <img
+          className="header__logo"
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        />
+      </Link>
       {/* endlink logo */}
 
       <div className="header__search">
@@ -29,10 +32,12 @@ function Header() {
 
       <div className="header__nav">
         {/* link login */}
+        <Link to="/login">
         <div className="header__option">
           <span className="header__optionLineOne">Hello Agustina</span>
           <span className="header__optionLineTow">Sign In</span>
         </div>
+        </Link>
         {/* endlink login */}
 
         {/* link orders */}
@@ -48,11 +53,13 @@ function Header() {
         </div>
 
         {/* link checkout */}
+        <Link to='/checkout'>
         <div className="header__optionBasket">
           <ShoppingBasketIcon />
-          <span className="header__optionLineTwo header__basketCount">
+          <span className="header__optionLineTwo header__basketCount">{basket?.length}
           </span>
         </div>
+        </Link>
         {/* endlink checkout */}
 
       </div>
